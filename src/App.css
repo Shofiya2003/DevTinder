@@ -1,3 +1,64 @@
+:root {
+  --white:#D2D1D1;
+  --grey:#505356;
+  --black:#030303;
+  --background:rgb(255,88,100);
+  --gradient:linear-gradient(90deg, rgba(255,88,100,1) 0%, rgba(233,83,134,1) 0%, rgba(201,11,74,1) 21%, rgba(253,41,123,1) 58%, rgba(255,101,91,1) 82%);
+}
+*{
+  margin: 0;
+}
 body{
   overflow: hidden;
+  margin:0;
 }
+
+.heading{
+ 
+  margin: auto;
+  margin-top:95px;
+}
+
+
+.login_div{
+  height: 100vh;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_col{
+  display: flex;
+  flex-direction: column;
+}
+.top_elements{
+  padding:2.5rem 0 0 3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.main_heading{
+  
+  font-size: 1.15rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.sign_up{
+  margin-right:3rem;
+  border-radius: 10px;
+  height:2.5rem;
+  width:6.6rem;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
+  background: var(--gradient);
+}
+
