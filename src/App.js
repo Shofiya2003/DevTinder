@@ -1,12 +1,12 @@
 import './App.css'
 import React from 'react';
 import  ReactDOM  from 'react-dom';
-import Card from './Components/Card';
+import Login from './Components/Login';
 
 function App() {
   return (
    <>
-      <Card></Card>
+      <Login></Login>
    </>
   );
 }
