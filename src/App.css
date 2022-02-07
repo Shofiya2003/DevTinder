@@ -2,14 +2,27 @@
   --white:#D2D1D1;
   --grey:#505356;
   --black:#030303;
+  --lightblack:#191A19;
   --background:rgb(255,88,100);
   --gradient:linear-gradient(90deg, rgba(255,88,100,1) 0%, rgba(233,83,134,1) 0%, rgba(201,11,74,1) 21%, rgba(253,41,123,1) 58%, rgba(255,101,91,1) 82%);
+
 }
 *{
   margin: 0;
 }
+#root{
+  height: 100vh;
+}
+.auth_buttons>*{
+  border: 1px solid ;
+  border-color: var(--background);
+}
+html{
+  height: 100%;
+}
 body{
-  overflow: hidden;
+  min-height: 100vh;
+
   margin:0;
 }
 
@@ -17,15 +30,76 @@ body{
  
   margin: auto;
   margin-top:95px;
+  font-size: 180%;
 }
 
 
+.input{
+  background-color: var(--lightblack);
+  
+}
+
+.input input{
+  background-color: var(--lightblack);
+  border: none;
+  height: 42px;
+  width: 360px;
+  padding-left:9px ;
+  color: var(--white);
+  font-size: 15px;
+}
+
+.input_section > *,.auth_buttons>*{
+  height: 42px;
+  width: 360px;
+  margin: 10px;
+ border-radius: 6px;
+
+ justify-content: center;
+ align-items: center;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.login_body{
+ 
+  margin-top: 7rem;
+ align-items: center;
+ justify-content: center;
+}
+
+.forgot_text{
+  font-size: 16px;
+ margin: auto;
+ text-decoration: underline;
+}
+
+.login_body p{
+  margin: 0 40px;
+  font-weight: 600;
+}
 .login_div{
-  height: 100vh;
+  min-height: 100%;
+  min-width: 100%;
   background-color: var(--black);
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
 }
+
+.login_page_button{
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
+  background: var(--gradient);
+  border-radius: 10px;
+}
+
 .flex{
   display: flex;
   flex-direction: row;
@@ -34,6 +108,15 @@ body{
 .flex_col{
   display: flex;
   flex-direction: column;
+}
+
+.tagline{
+  color: var(--grey);
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  margin: auto;
+  margin-top:15px;
+  font-size: 1.2rem;
 }
 .top_elements{
   padding:2.5rem 0 0 3rem;
@@ -52,13 +135,24 @@ body{
 
 .sign_up{
   margin-right:3rem;
-  border-radius: 10px;
+  
   height:2.5rem;
   width:6.6rem;
-  font-weight: 600;
-  justify-content: center;
-  align-items: center;
-  background: var(--background);
-  background: var(--gradient);
+  
+}
+
+
+@media only screen and (max-width:1014px){
+  .login_body{
+    flex-direction: column;
+  }
+
+  .forgot_text{
+    margin: 20px auto 30px;
+  }
+
+  .input_section > *,.auth_buttons>*{
+    width:324px;
+  }
 }
 

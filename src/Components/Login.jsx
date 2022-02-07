@@ -16,22 +16,33 @@ export default function Login() {
       <h1 className="main_heading">
           Find Your Simran.
       </h1>
-      <div className="sign_up flex"><p>Sign Up</p></div>
+      <div className="sign_up flex login_page_button"><p>Sign Up</p></div>
     </div>
-     
+     <div className="flex_col">
       <h1 className="heading">Login to Your Account</h1>
       <p className="tagline">Where Developers meet Developers</p>
+     </div>
+      
+    <div className="login_body flex">
+      <div className="input_section flex_col center">
+        <InputBox type="text" placeholder="Username/Email"/>
+        <InputBox type="password" placeholder="Password"/>
+        <div className="login flex login_page_button">
+          <p>Login to Your Account</p>
+        </div>
+      </div>
+      <p>/</p>
+      <div className="auth_buttons  flex_col center">
+        <AuthButtons medium="Google" icon={<GoogleIcon/>}></AuthButtons>
+        <AuthButtons medium="Github" icon={<GitHubIcon/>}></AuthButtons>
+        <AuthButtons medium="LinkedIn" icon={<LinkedInIcon/>}></AuthButtons>
     
-    <AuthButtons medium="Google" icon={<GoogleIcon/>}></AuthButtons>
-    <AuthButtons medium="Github" icon={<GitHubIcon/>}></AuthButtons>
-    <AuthButtons medium="LinkedIn" icon={<LinkedInIcon/>}></AuthButtons>
-    <InputBox type="text" placeholder="Username/Email"/>
-    <InputBox type="password" placeholder="Password"/>
-
-    <div>
-      <p>Login to Your Account</p>
+      </div>
     </div>
+   
 
-    <p>Forgot Password</p>
+   
+
+    <p className="forgot_text">Forgot Password</p>
   </div>;
 }
