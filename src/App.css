@@ -5,7 +5,8 @@
   --lightblack:#191A19;
   --background:rgb(255,88,100);
   --gradient:linear-gradient(90deg, rgba(255,88,100,1) 0%, rgba(233,83,134,1) 0%, rgba(201,11,74,1) 21%, rgba(253,41,123,1) 58%, rgba(255,101,91,1) 82%);
-
+  --pink:#FEE3EC;
+  --purple:#B8BADB;
 }
 *{
   margin: 0;
@@ -139,6 +140,22 @@ body{
   height:2.5rem;
   width:6.6rem;
   
+}
+
+
+/* Profile */
+.sidenav{
+    height: 100vw;
+    width: 15%;
+    background-color: white;
+}
+
+.profile{
+  background-color: var(--pink);
+}
+
+.active{
+ background-color: var(--purple);
 }
 
 
