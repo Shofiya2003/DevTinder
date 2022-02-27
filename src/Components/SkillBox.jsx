@@ -1,7 +1,8 @@
 import React from 'react'
-
+import {Button} from '@mui/material'
 export default function SkillBox(props) {
   return (
-    <div>{props.skill}</div>
+    <Button id='skillbox' variant="contained" disabled>{props.skill}</Button>
+    
   )
 }

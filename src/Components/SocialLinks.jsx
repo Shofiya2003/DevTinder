@@ -5,7 +5,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 export default function SocialLinks(props) {
   return (
-    <div className='flex'>
+    <div className='social_links flex'>
         <GitHubIcon></GitHubIcon>
         <LinkedInIcon></LinkedInIcon>
         <FacebookIcon></FacebookIcon>

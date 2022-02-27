@@ -1,12 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useEffect } from 'react'
 export default function Navlink(props) {
   return (
-    <div>
+    <NavLink to={props.link} className={({isActive})=>{
+      return isActive?'active link_div flex':'link_div flex'
+  }}>
+      <div className='flex'>
         {props.icon}
-        <NavLink to={props.link} className={({isActive})=>{
-            return isActive?'active':undefined
-        }}>{props.linkText}</NavLink>
-    </div>
+        <p className='link_text'>{props.linkText}</p>
+      </div>
+    </NavLink>
   )
 }

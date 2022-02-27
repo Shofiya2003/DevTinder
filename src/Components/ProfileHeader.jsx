@@ -1,17 +1,17 @@
 import React from 'react';
-import header from '../header.png'
-import me from '../me.jpg'
-import {Avatar} from '@mui/material'
+import header from '../image.jpg'
+import ProfileAvatar from './Avatar';
+
 export default function ProfileHeader(props){
     return (
-        <header>
+        <header className='flex_col'>
             <div class="head_image_div">
                 <img src={header} alt="header_image" />
             </div>
-            <div>
-                <Avatar alt="Remy Sharp" src={me} sx={{width:56,height:56}}/>
-                <h1>{props.name}</h1>
-            </div>
+            <main className='flex'>
+                <ProfileAvatar></ProfileAvatar>
+            </main>
+            
            
         </header>
     )

@@ -8,14 +8,19 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 // Components
 import Navlink from './Navlink'
+import Heading from './Heading';
 export default function Sidenav() {
   return (
-    <div className='sidenav'>
-        <Navlink icon={<DashboardIcon/>} linkText="Dashboard" link="dashboard"></Navlink>
-        <Navlink icon={<ChatIcon/>} linkText="Chat" link="chat"></Navlink>
-        <Navlink icon={<CodeIcon/>} linkText="Hackathons" link="hackathons"></Navlink>
-        <Navlink icon={<AccountCircleIcon/>} linkText="Profile" link="/profile"></Navlink>
-        <Navlink icon={<FavoriteIcon/>} linkText="Explore" link="cards"></Navlink>
+    <div className='sidenav flex_col'>
+        <Heading/>
+        <nav className='flex_col'>
+          <Navlink icon={<DashboardIcon/>} linkText="Dashboard" link="/dashboard"></Navlink>
+          <Navlink icon={<ChatIcon/>} linkText="Chat" link="/chat"></Navlink>
+          <Navlink icon={<CodeIcon/>} linkText="Hackathons" link="/hackathons"></Navlink>
+          <Navlink icon={<AccountCircleIcon/>} linkText="Profile" link="/profile"></Navlink>
+          <Navlink icon={<FavoriteIcon/>} linkText="Explore" link="/cards"></Navlink>
+        </nav>
+        
     </div>
   )
 }

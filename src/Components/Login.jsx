@@ -1,8 +1,11 @@
 import React,{useState} from "react";
 import axios from 'axios'
+import  { Navigate,Link,useNavigate } from 'react-router-dom'
 // React Components
 import AuthButtons from "./AuthButtons";
 import InputBox from "./InputBox";
+import Heading from "./Heading";
+
 
 // Material UI icons
 import GoogleIcon from '@mui/icons-material/Google';
@@ -11,6 +14,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 
 export default function Login() {
+  let navigate=useNavigate();
   const [username, setusername] = useState("");
   const [password, setPassword]=useState("");
   const [isSigningUp,setIsSigningUp]=useState(false);
@@ -27,6 +31,7 @@ export default function Login() {
   }
 
   function sendLogInfo(){
+    
     if(isSigningUp){
       axios.post('http://localhost:5000/api/signup',{
         username:username,
@@ -34,7 +39,9 @@ export default function Login() {
       },{
         'Content-type':`application/json`,
       }).then(message=>{
-        console.log(message.data);
+        if(message.data.status==='ok'){
+          navigate('/profile');
+        }
       }).catch(err=>{
         console.log(err);
       })
@@ -46,8 +53,9 @@ export default function Login() {
       },{
         'Content-type':`application/json`,
       }).then(message=>{
-        console.log(message.data);
-      }).catch(err=>{
+        if(message.data.status==='ok'){
+          navigate('/profile',{state:{username:username}});
+        }}).catch(err=>{
         console.log(err);
       })
     }
@@ -61,9 +69,7 @@ export default function Login() {
   }
   return <div className="login_div flex_col">
     <div className="top_elements flex">
-      <h1 className="main_heading">
-          Find Your Simran.
-      </h1>
+    <Heading/>
       <div className="sign_up flex login_page_button" onClick={signUp}><p>{isSigningUp?`Login`:`Sign up`}</p></div>
     </div>
      <div className="flex_col">
