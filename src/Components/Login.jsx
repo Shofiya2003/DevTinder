@@ -33,6 +33,7 @@ export default function Login() {
   function sendLogInfo(){
     
     if(isSigningUp){
+      console.log("hey");
       axios.post('http://localhost:5000/api/signup',{
         username:username,
         password:password
@@ -40,21 +41,27 @@ export default function Login() {
         'Content-type':`application/json`,
       }).then(message=>{
         if(message.data.status==='ok'){
-          navigate('/profile');
+          console.log(message);
         }
       }).catch(err=>{
         console.log(err);
       })
     }
     else{
+        console.log("d");
         axios.post('http://localhost:5000/api/login',{
         username:username,
         password:password
       },{
         'Content-type':`application/json`,
       }).then(message=>{
+        console.log(message);
         if(message.data.status==='ok'){
-          navigate('/profile',{state:{username:username}});
+          const {data,token}=message.data;
+          console.log(data);
+          localStorage.setItem('userid',data);
+          localStorage.setItem('token',token);
+          navigate(`/profile/${data}`);
         }}).catch(err=>{
         console.log(err);
       })

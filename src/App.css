@@ -29,7 +29,7 @@ html{
   height: 100%;
 }
 body{
-  min-height: 100vh;
+  min-height: 100%;
   font-family: 'Montserrat', sans-serif;
   margin:0;
 }
@@ -45,7 +45,7 @@ body{
 
 .input{
   background-color: var(--lightblack);
-  
+  color: white;
 }
 
 .input input{
@@ -363,15 +363,18 @@ nav .active{
 .main_cards{
   background: var(--transparent_grdient);
   height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .card_second_div{
-  
+  margin: 0 auto;
   background-color: var(--lightblack);
-  width: 35%;
-  min-width: 357px;
-  position: absolute;
-  left: 400px;
-  right: 400px;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  
+  max-width: 708px;
+  width: 100%;
+  
 }
 .intro{
   background-color: var(--lightblack);
@@ -395,9 +398,9 @@ nav .active{
 }
 
 .skills{
-  padding: 10px;
-  background: var(--black);
   
+  background: var(--black);
+  flex-wrap: wrap;
   
 }
 #skillbox{
@@ -408,9 +411,87 @@ nav .active{
   padding: 5px;
 }
 
+.card .footer{
+  padding: 15px;
+  color: white;
+  background-color: var(--black);
+  font-weight: 600;
+}
+
+.footer p{
+  margin-bottom: 3px;
+}
 
 
-@media only screen and (max-width:1014px){
+/* Detail Form */
+
+
+.detail_form{
+ 
+ width: 40%;
+ 
+ 
+}
+
+.form_main .main_heading{
+  width: 50%;
+    font-size: 31px;
+    margin: auto;
+    color: var(--background);
+    text-align: center;
+    margin-top: 25px;
+}
+
+.form_main div#detail_form{
+  background: var(--lightblack);
+  min-height: 100vh;
+  min-width: 100%;
+  justify-content: center;
+  padding-top: 124px;
+}
+.detail_form > *{
+    width: 70%;
+    background-color: var(--black);
+    color: var(--white);
+    
+
+  
+}
+
+
+
+.detail_form h1{
+  background-color: white;
+  color: var(--background);
+}
+
+.blob{
+  z-index: -1;
+  position: relative;
+}
+.detail_form input,.detail_form textarea{
+ 
+  background-color: var(--black);
+    border: none;
+    outline: none;
+    color: white;
+    
+}
+
+.detail_form label{
+  color: var(--grey);
+}
+
+.form_side{
+  height: 100vh;
+  
+  width: 20%;
+  max-width: 623px;
+  min-width: 303px;
+  
+}
+
+@media only screen and (max-width:1484px){
   .login_body{
     flex-direction: column;
   }
@@ -422,6 +503,41 @@ nav .active{
   .input_section > *,.auth_buttons>*{
     width:324px;
   }
+
+  .form_side{
+    display: none;
+  }
+
+  .detail_form{
+    width: 50%;
+    align-items: center;
+  }
+}
+
+.form_main .skills{
+  background-color: var(--lightblack);
+  margin-top: 20px;
+}
+
+.form_main .login_page_button{
+  width: 70% !important;
+  margin-top: 30px;
+}
+
+
+@media only screen and (max-width:704px) {
+  #detail_form{
+    flex-direction: column;
+  }
+  .detail_form{
+    width: 100%;
+
+  }
+  .detail_form>*{
+    width: 70%;
+  }
+
+  
 }
 
 
@@ -431,5 +547,7 @@ nav .active{
   .main_heading{
     font-size: 15px;
   }
+
+ 
 }
 

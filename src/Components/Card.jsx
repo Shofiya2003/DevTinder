@@ -14,7 +14,7 @@ const onSwipe = (direction) => {
     console.log(myIdentifier + ' left the screen')
   }
 export default function Card() {
-    const skills=["Backend","Frontend","CSS","MongoDB"];
+    const skills=["Backend","Frontend","CSS","MongoDB","CSS","Backend","CSS","ff"];
   return (
     <TinderCard className='card_second_div' onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}>
       <div className=''>
@@ -24,7 +24,7 @@ export default function Card() {
                     <Intro name="Shofiya Bootwala" username="Bootwala Shofiya"></Intro>
                     <div className='flex' style={{'marginBottom':'10px'}}>
                         <Button variant='outlined' id='outlined_button' style={{'marginRight':'5px'}}>Know More</Button>
-                        <Button variant='filled' className='login_page_button'>Follow</Button>
+                        <Button variant='filled' className='login_page_button' style={{'width':'103px'}}>Follow</Button>
                     </div>
                    
                   
@@ -32,12 +32,16 @@ export default function Card() {
             </div>
            
             
-           
-            <div className='flex skills'>
-            {skills.map(skill=>{
+           <div className='flex_col footer'>
+             <p>Skills</p>
+              <div className='flex skills'>
+
+                {skills.map(skill=>{
                     return <SkillBox skill={skill} ></SkillBox>
                 })}
-            </div>
+              </div>
+           </div>
+            
                
 
             

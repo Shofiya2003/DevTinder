@@ -14,9 +14,9 @@ export default function Cards() {
       }
       const arr=["Hey","There","Shofiya"];
   return <div className='main_cards flex center'>
-    {arr.map(s=>{
-      return <Card></Card>
-    })}
+  {arr.map(s=>{
+    return <Card></Card>
+  })}
 
-  </div>;
+</div>;
 }
